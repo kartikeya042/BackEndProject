@@ -2,14 +2,13 @@
 
 // require('dotenv').config({path: 'D:/CS/Web Development/Tutorials/BackEnd/BackEndProject/.env'})
 import dotenv from 'dotenv';
-import express from 'express';
 import connectDB from './db/index.js';
+import { app } from './app.js';
 
 dotenv.config({
     path: 'D:/CS/Web Development/Tutorials/BackEnd/BackEndProject/.env'
 })
 
-const app = express();
 connectDB()
 .then(() => {
     app.listen(process.env.PORT || 8000, ()=>{

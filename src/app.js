@@ -1,5 +1,5 @@
 import express from 'express'
-import cors from'cors'
+import cors from 'cors'
 import cookieParser from 'cookie-parser'
 
 const app = express()
@@ -8,6 +8,7 @@ app.use(cors({
     credentials: true
 }))
 
+// app.use is mostly implemented when using a middleware.
 app.use(express.json({limit: '16kb'}))
 app.use(express.urlencoded({extended: true, limit: '16kb'}))
 app.use(express.static("public"))
